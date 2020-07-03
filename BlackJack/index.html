@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlackJack</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="./assets/js/underscore-min.js"></script>
+  </head>
+  <body>
+    <header class="titulo">
+      BlacJack
+    </header>
+
+    <div class="row mt-2">
+      <div class="col text-center">
+        <button id="btnNuevo" class="btn btn-danger">Nuevo Juego</button>
+        <button id="btnPedir" disabled="disabled" class="btn btn-success">
+          Pedir Carta
+        </button>
+        <button id="btnDetener" disabled="disabled" class="btn btn-warning">
+          Detener
+        </button>
+      </div>
+    </div>
+
+    <div class="row container">
+      <div class="col">
+        <h2>Jugador 1 <small>0</small></h2>
+        <div id="jugador-cartas" class="divCartas"></div>
+      </div>
+    </div>
+
+    <div class="row container mt-5">
+      <div class="col">
+        <h2>Computadora <small>0</small></h2>
+        <div id="computador-cartas" class="divCartas"></div>
+      </div>
+    </div>
+    <script src="./assets/js/juego.js"></script>
+
+    <script>
+      miJuego.nuevoJuego();
+    </script>
+  </body>
+</html>
