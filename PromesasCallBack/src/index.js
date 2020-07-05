@@ -8,7 +8,12 @@ import {
 } from "./js/promesas";
 
 import "./styles.css";
-import { obtenerHeroesArr, obtenerHeroeAwait } from "./js/await";
+import {
+  obtenerHeroesArr,
+  obtenerHeroeAwait,
+  heroesCiclo,
+  heroesIfAwait,
+} from "./js/await";
 
 let heroeId = "iron";
 let heroeId2 = "capi";
@@ -78,3 +83,9 @@ obtenerHeroeAwait()
     console.timeEnd("await2");
   })
   .catch(console.warn);
+
+// ciclos con await y resolucion de promesas como un foreach
+
+heroesCiclo();
+
+heroesIfAwait("iron");
