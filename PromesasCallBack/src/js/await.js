@@ -4,7 +4,6 @@ const heroesIds = ["capi", "iron", "spiderman"];
 
 const heroesPromesas = heroesIds.map(buscarHeroe);
 // const heroesPromesas = heroesIds.map(id => buscarHeroe(id));
-
 // export const obtenerHeroesArr = async () => {
 //   const heroes = [];
 
