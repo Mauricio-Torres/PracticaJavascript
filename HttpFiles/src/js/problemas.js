@@ -62,3 +62,18 @@ const repetidos = str => {
 
 const u = repetidos('this is is is a repetead word test this a a')
 console.log(u)
+
+
+// encontrar si una palabra es palindromo 
+
+const isPalindromo = (str) => {
+    str = str.replace(/\s/g, ''); // reemplaza todas las estancias de espacios en blanco 
+    const lowered = str.toLowerCase();
+    const splitted = lowered.split('');
+    const reverse = splitted.reverse();
+    const join = reverse.join('');
+    return lowered == join;
+}
+
+const wordIsPalindromo = isPalindromo('Do geese see God')
+console.log(wordIsPalindromo);
