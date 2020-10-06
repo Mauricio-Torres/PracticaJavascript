@@ -1,5 +1,6 @@
 const url = 'https://api.chucknorris.io/jokes/random';
 const urlUsers = 'https://reqres.in/api/users?page=2';
+const keyUpLoadData = 'y0ug8lv8';
 
 const obtenerChiste = async ()=> {
     
@@ -15,11 +16,33 @@ const obtenerChiste = async ()=> {
     }
 }
 
+const subirFile = async (file, url) => {
+    const formData = new FormData();
+    formData.append('upload_preset', keyUpLoadData);
+    formData.append('file', file);
+
+    try {
+
+        const resp = await fetch (url, {
+            method: 'POST',
+            body: formData
+        });
+
+        if (resp.ok) {
+            return await resp.json()
+        } else {
+            throw await resp.json();
+        }
+
+    } catch (err) {
+        throw err
+    }
+}
+
 const obtenerUsuarios = async ()=>{
     try{
 
         const resp = await fetch(urlUsers);
-        console.log('usuarios ', resp);
         const { data: usuarios } = await resp.json();
         if (usuarios) {
             return usuarios;
@@ -33,4 +56,4 @@ const obtenerUsuarios = async ()=>{
     }
 }
 
-export { obtenerChiste, obtenerUsuarios }
+export { obtenerChiste, obtenerUsuarios, subirFile }
