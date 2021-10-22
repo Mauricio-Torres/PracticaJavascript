@@ -33,3 +33,30 @@ while (prueba === 100000) {
   prueba++;
 }
 console.timeEnd(1);
+
+
+// --------------------Desestructuracion de objetos ------------------------------------
+
+
+const persona ={
+  nombre:'test',
+  edad:44,
+  clave:'clave'
+}
+
+
+const contextUser =({clave, nombre, edad})=>{
+  return {
+    nombreClave: clave,
+    anios: edad,
+    data:{
+      lat:34345.345345,
+      lng:432423.234234
+    }
+  };
+}
+
+
+const { nombreClave,  anios, data: {lat, lng}} = contextUser(persona);
+
+console.log(nombreClave, anios, lat, lng)
